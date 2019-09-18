@@ -1,7 +1,19 @@
 server:
-  port: 8084
+  port: 8088
 dubbo:
   application:
     name: provider
   registry:
     address: zookeeper://127.0.0.1:2181
+    group: provider
+  monitor:
+    username: provider
+    password: provider
+    protocol: registry
+  protocol:
+    name: dubbo
+    port: 8086
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
