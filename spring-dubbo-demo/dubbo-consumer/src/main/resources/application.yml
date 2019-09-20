@@ -1,12 +1,6 @@
-server:
-  port: 9999
-dubbo:
-  application:
-    name: consumer
-  registry:
-    address: zookeeper://localhost:2181
-    group: provider
 
 spring:
+  profiles:
+    active: 1
   main:
     allow-bean-definition-overriding: true

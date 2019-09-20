@@ -1,0 +1,18 @@
+
+dubbo:
+  application:
+    name: consumer
+  registry:
+    address: zookeeper://47.104.171.254:2181
+
+  monitor:
+    username: provider
+    password: provider
+    protocol: registry
+  protocol:
+    name: dubbo
+    port: 9095
+
+
+server:
+  port: 8085
