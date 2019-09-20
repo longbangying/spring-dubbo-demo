@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://code.alibabatech.com/schema/dubbo
+   http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="provider-xml" owner="lby" organization="dubbo"></dubbo:application>
+    <dubbo:registry address="zookeeper://47.104.171.254:2181"></dubbo:registry>
+    <dubbo:protocol name="dubbo-provider-xml" port="20880"></dubbo:protocol>
+
+    <dubbo:service interface="com.xbang.commons.dubbo.api.XmlTestService" ref="xmlTestService" protocol="dubbo">
+        <dubbo:method name="getXml" loadbalance="roundrobin"></dubbo:method>
+    </dubbo:service>
+
+    <dubbo:service interface="com.xbang.commons.dubbo.api.TestService" ref="testService" protocol="dubbo" loadbalance="roundrobin" version="1.0.1"></dubbo:service>
+
+    <bean id="xmlTestService" class="com.xbang.xmlprovider.service.open.XmlTestServiceImpl"></bean>
+
+
+    <bean id="testService" class="com.xbang.xmlprovider.service.open.TestServiceImpl"></bean>
+</beans>
