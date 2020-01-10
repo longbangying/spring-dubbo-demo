@@ -8,6 +8,8 @@
         <module>dubbo-consumer</module>
         <module>dubbo-provider-xml</module>
         <module>xmlconsumer</module>
+        <module>dubbo-java-demo</module>
+        <module>dubbo-java-demo</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
