@@ -1,7 +1,7 @@
 
 dubbo:
   application:
-    name: provider-1
+    name: provider-2
   registry:
     address: zookeeper://47.104.171.254:2181
   monitor:

@@ -7,7 +7,7 @@
    http://code.alibabatech.com/schema/dubbo
    http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-    <dubbo:application name="provider-xml" owner="lby" organization="dubbo"></dubbo:application>
+    <dubbo:application name="provider-3" owner="lby" organization="dubbo"></dubbo:application>
     <dubbo:registry address="zookeeper://47.104.171.254:2181"></dubbo:registry>
     <dubbo:protocol name="dubbo-provider-xml" port="20880"></dubbo:protocol>
 
@@ -21,4 +21,9 @@
 
 
     <bean id="testService" class="com.xbang.xmlprovider.service.open.TestServiceImpl"></bean>
+
+    <dubbo:service interface="com.xbang.commons.dubbo.api.ISayHelloService" ref="sayHello" protocol="dubbo"/>
+
+    <bean id="sayHello" class="com.xbang.xmlprovider.service.open.SayHelloServiceImpl"></bean>
+
 </beans>

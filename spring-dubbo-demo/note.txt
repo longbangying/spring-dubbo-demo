@@ -1,0 +1,19 @@
+dubbo笔记
+这里用的 apache-dubbo
+1.如何开启dubbo的服务?
+    1.使用EnableDubbo 开启dubbo的功能;
+    2.也可以基于xml的方式开启,如dubbo-provider-xml 中的方式;
+2.如何注册一个服务
+    1.基于注解的方式 @service,前提是必须用@EnableDubbo 开启dubbo功能；
+    2.基于xml配置的方式,如dubbo-provider-xml 中的方式;
+3.如何使用已经注册的服务
+    1.基于注解的方式 @Reference,前提是必须用@EnableDubbo 开启dubbo功能;
+    2.基于xml配置的方式,如dubbo-consumer-xml 中的方式;
+
+
+4.@Reference
+    1.loadbalance      指定负载算法， 4种配置可选，分别是random(随机),leastactive(最少活跃)，roundrobin(轮训)，ConsistentHash(一致性哈希)，默认是随机算法；
+    2.version          设置版本号
+    3.check            默认true,Dubbo 缺省会在启动时检查依赖的服务是否可用，不可用时会抛出异常，阻止 Spring 初始化完成，默认 check="true"，可以通过 check="false" 关闭检查
+    4.cluster          集群容错方案 ,可配置 Cluster  的实现类
+
