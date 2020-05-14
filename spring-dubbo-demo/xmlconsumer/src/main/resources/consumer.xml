@@ -15,4 +15,7 @@
     <dubbo:reference id="xmlTestService" interface="com.xbang.commons.dubbo.api.XmlTestService" ></dubbo:reference>
     <dubbo:reference id="testService" interface="com.xbang.commons.dubbo.api.TestService"></dubbo:reference>
     <dubbo:reference id="sayHello" interface="com.xbang.commons.dubbo.api.ISayHelloService" loadbalance="roundrobin"></dubbo:reference>
+    <dubbo:reference interface="com.xbang.commons.dubbo.api.TestEchoService" >
+
+    </dubbo:reference>
 </beans>

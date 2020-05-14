@@ -9,7 +9,8 @@
 
     <dubbo:application name="provider-3" owner="lby" organization="dubbo"></dubbo:application>
     <dubbo:registry address="zookeeper://47.104.171.254:2181"></dubbo:registry>
-    <dubbo:protocol name="dubbo-provider-xml" port="20880"></dubbo:protocol>
+    <dubbo:protocol name="dubbo" port="20880"></dubbo:protocol>
+    <dubbo:protocol name="hessian" port="8080"/>
 
     <dubbo:service interface="com.xbang.commons.dubbo.api.XmlTestService" ref="xmlTestService" protocol="dubbo">
         <dubbo:method name="getXml" loadbalance="roundrobin"></dubbo:method>
@@ -22,8 +23,8 @@
 
     <bean id="testService" class="com.xbang.xmlprovider.service.open.TestServiceImpl"></bean>
 
-    <dubbo:service interface="com.xbang.commons.dubbo.api.ISayHelloService" ref="sayHello" protocol="dubbo"/>
+    <dubbo:service interface="com.xbang.commons.dubbo.api.ISayHelloService" ref="sayHello" protocol="dubbo,hessian"/>
 
-    <bean id="sayHello" class="com.xbang.xmlprovider.service.open.SayHelloServiceImpl"></bean>
+    <bean id="sayHello" class="com.xbang.xmlprovider.service.open.SayHelloServiceImpl" ></bean>
 
 </beans>

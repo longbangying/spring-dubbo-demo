@@ -10,6 +10,7 @@
         <module>xmlconsumer</module>
         <module>dubbo-java-demo</module>
         <module>dubbo-java-demo</module>
+        <module>commons</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

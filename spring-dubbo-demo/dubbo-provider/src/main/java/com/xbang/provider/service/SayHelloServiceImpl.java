@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.Locale;
 
 @Component
-@Service
+@Service()
 @Slf4j
 public class SayHelloServiceImpl implements ISayHelloService {
 

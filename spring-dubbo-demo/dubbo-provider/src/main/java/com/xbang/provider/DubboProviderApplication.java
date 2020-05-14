@@ -16,13 +16,6 @@ public class DubboProviderApplication {
         ApplicationContext applicationContext = SpringApplication.run(DubboProviderApplication.class,args);
 
         String [] beans = ((ConfigurableApplicationContext) applicationContext).getBeanFactory().getSingletonNames();
-        log.info("bean info begin**********************************************************************************");
-        for(String bean : beans ){
-            String  beanType = ((ConfigurableApplicationContext) applicationContext).getBeanFactory().getType(bean).getName();
-            if(!beanType.startsWith("org.springframework"))
-                log.info("beanName:{} beanType:{}",bean, beanType);
-        }
-        log.info("bean info end**********************************************************************************");
         ISayHelloService iSayHelloService = (ISayHelloService) applicationContext.getBean("sayHelloServiceImpl");
         iSayHelloService.sayHello("xbang");
     }

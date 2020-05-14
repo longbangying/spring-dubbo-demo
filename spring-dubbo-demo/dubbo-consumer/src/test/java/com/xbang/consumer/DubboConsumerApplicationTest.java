@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.xbang.commons.dubbo.api.ISayHelloService;
 import com.xbang.commons.dubbo.api.TestService;
 import com.xbang.commons.dubbo.entity.UserInfo;
+import com.xbang.dubbo.commons.api.TestEchoService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Reference;
 import org.apache.dubbo.monitor.MonitorService;
@@ -29,6 +30,18 @@ public class DubboConsumerApplicationTest {
     @Reference(async = true,timeout = 10 * 1000,loadbalance = "roundrobin")
     TestService testService;
 
+    @Reference
+    TestEchoService testEchoService;
+
+    @Test
+    public void test11(){
+        System.out.println("OK".equals(testEchoService.$echo("OK")));
+        System.out.println(RpcContext.getContext().isConsumerSide());
+        RpcContext.getContext().isConsumerSide();
+        RpcContext.getContext().setAttachment("xbang","xbang");
+        System.out.println(RpcContext.getContext().getRemoteHost());
+        System.out.println("OK".equals(testEchoService.$echo("OK")));
+    }
 
 
 
